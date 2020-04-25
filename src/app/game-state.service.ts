@@ -9,31 +9,20 @@ import { catchError, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class GameStateService implements OnInit, OnDestroy {
-  gameState: GameState;
-  statePoller: any;
+export class GameStateService {
 
   constructor(
     private http: HttpClient,
     private log: LoggerService
   ) { }
 
-  ngOnInit(): void {
-    this.statePoller = setInterval(this.fetchGameState, 1000);
-  }
-
-  ngOnDestroy(): void {
-    clearInterval(this.statePoller);
-  }
-
-  fetchGameState(): void {
+  fetchGameState(): Observable<GameState> {
     this.log.DEBUG("GameStateService.fetchGameState", "fetching game state");
-    this.http.get<GameState>(`${gameServerUrl}/game-state`)
+    return this.http.get<GameState>(`${gameServerUrl}/game-state`)
       .pipe(
         tap(result => this.log.DEBUG("GameStateService.fetchGameState", `Retrieving ${JSON.stringify(result)}`)),
         catchError(this.handleError<any>("GameStateService.fetchGameState"))
-      )
-      .subscribe(result => this.gameState = result);
+      );
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
