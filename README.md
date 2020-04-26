@@ -1,4 +1,4 @@
-[![Build Status](https://tchen25.visualstudio.com/Teddystrations/_apis/build/status/theodoreschen.ng-teddystrations-game?branchName=master)](https://tchen25.visualstudio.com/Teddystrations/_build/latest?definitionId=8&branchName=master)
+[![Build Status](https://tchen25.visualstudio.com/Teddystrations/_apis/build/status/theodoreschen.ng-teddystrations-game?branchName=master)](https://tchen25.visualstudio.com/Teddystrations/_build/latest?definitionId=8&branchName=master) ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/tchen25/Teddystrations/8) ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/tchen25/Teddystrations/8)
 
 # NgTeddystrationsGame
 
