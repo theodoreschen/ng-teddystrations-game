@@ -1,4 +1,4 @@
-[![Build Status](https://tchen25.visualstudio.com/Teddystrations/_apis/build/status/theodoreschen.ng-teddystrations-game?branchName=master)](https://tchen25.visualstudio.com/Teddystrations/_build/latest?definitionId=6&branchName=master)
+[![Build Status](https://tchen25.visualstudio.com/Teddystrations/_apis/build/status/theodoreschen.ng-teddystrations-game?branchName=master)](https://tchen25.visualstudio.com/Teddystrations/_build/latest?definitionId=8&branchName=master)
 
 # NgTelestrationsGame
 
