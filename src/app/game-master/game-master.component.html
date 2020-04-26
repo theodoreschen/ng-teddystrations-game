@@ -1,1 +1,7 @@
-<p>game-master works!</p>
+<div *ngIf="develMode">
+  <button (click)="toggleStatePolling()">
+    {{ doStatePolling? "Disable" : "Enable" }} state polling
+  </button>
+  <span>Packet count: {{pollCounter}}</span>
+  <p>Current state: {{state.state}}</p>
+</div>
