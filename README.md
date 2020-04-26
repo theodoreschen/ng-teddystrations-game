@@ -1,6 +1,6 @@
 [![Build Status](https://tchen25.visualstudio.com/Teddystrations/_apis/build/status/theodoreschen.ng-teddystrations-game?branchName=master)](https://tchen25.visualstudio.com/Teddystrations/_build/latest?definitionId=8&branchName=master)
 
-# NgTelestrationsGame
+# NgTeddystrationsGame
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 

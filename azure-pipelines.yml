@@ -20,3 +20,18 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+
+- script: | 
+    ng test --browsers=FirefoxHeadless --no-watch --code-coverage --reporters=junit
+  displayName: 'npm run test'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/test-results.xml'
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/cobertura-coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'

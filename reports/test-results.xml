@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<testsuite name="Firefox 75.0 (Ubuntu 0.0.0)" package="" timestamp="2020-04-26T04:18:49" id="0" hostname="ubuntu" tests="8" errors="0" failures="3" time="0.166">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:75.0) Gecko/20100101 Firefox/75.0"/>
+  </properties>
+  <testcase name="LoggerService should be created" time="0.021" classname="LoggerService"/>
+  <testcase name="LoggerWidgetComponent setGlobalLogLevel should set global log level to correct level" time="0.063" classname="LoggerWidgetComponent setGlobalLogLevel"/>
+  <testcase name="LoggerWidgetComponent should create" time="0.017" classname="LoggerWidgetComponent"/>
+  <testcase name="GameMasterComponent should create" time="0.018" classname="GameMasterComponent">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[GameStateService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient! in http://localhost:9876/_karma_webpack_/vendor.js (line 41045)
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'GameStateService', 'HttpClient', 'HttpClient' ] })
+get@http://localhost:9876/_karma_webpack_/vendor.js:41045:27
+get@http://localhost:9876/_karma_webpack_/vendor.js:54938:33
+get@http://localhost:9876/_karma_webpack_/vendor.js:54938:33
+injectInjectorOnly@http://localhost:9876/_karma_webpack_/vendor.js:40900:33
+ɵɵinject@http://localhost:9876/_karma_webpack_/vendor.js:40910:57
+GameStateService_Factory@ng:///GameStateService/ɵfac.js:5:44
+hydrate@http://localhost:9876/_karma_webpack_/vendor.js:55176:54
+get@http://localhost:9876/_karma_webpack_/vendor.js:54926:33
+get@http://localhost:9876/_karma_webpack_/vendor.js:72504:33
+get@http://localhost:9876/_karma_webpack_/vendor.js:70232:35
+getOrCreateInjectable@http://localhost:9876/_karma_webpack_/vendor.js:44839:39
+ɵɵdirectiveInject@http://localhost:9876/_karma_webpack_/vendor.js:58872:12
+GameMasterComponent_Factory@ng:///GameMasterComponent/ɵfac.js:6:7
+getNodeInjectable@http://localhost:9876/_karma_webpack_/vendor.js:44984:44
+instantiateRootComponent@http://localhost:9876/_karma_webpack_/vendor.js:50948:40
+createRootComponent@http://localhost:9876/_karma_webpack_/vendor.js:64292:47
+create@http://localhost:9876/_karma_webpack_/vendor.js:70355:25
+initComponent@http://localhost:9876/_karma_webpack_/vendor.js:86405:51
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3836:30
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/ProxyZoneSpec.prototype.onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:113234:43
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:77087:33
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+run@http://localhost:9876/_karma_webpack_/polyfills.js:3595:47
+run@http://localhost:9876/_karma_webpack_/vendor.js:76915:91
+createComponent@http://localhost:9876/_karma_webpack_/vendor.js:86409:41
+createComponent@http://localhost:9876/_karma_webpack_/vendor.js:86191:37
+./src/app/game-master/game-master.component.spec.ts/&lt;/&lt;@http://localhost:9876/_karma_webpack_/main.js:667:81
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3836:30
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/ProxyZoneSpec.prototype.onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:113234:43
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+run@http://localhost:9876/_karma_webpack_/polyfills.js:3595:47
+runInTestZone@http://localhost:9876/_karma_webpack_/vendor.js:113487:38
+wrapTestInZone/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:113502:24
+&lt;Jasmine&gt;
+runInTestZone/&lt;/testZoneSpec&lt;/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:114083:51
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3836:30
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/ProxyZoneSpec.prototype.onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:113234:43
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+run@http://localhost:9876/_karma_webpack_/polyfills.js:3595:47
+runInTestZone/&lt;/testZoneSpec&lt;@http://localhost:9876/_karma_webpack_/vendor.js:114083:33
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/AsyncTestZoneSpec.prototype._finishCallbackIfDone/&lt;/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:113917:39
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.js:3871:35
+runTask@http://localhost:9876/_karma_webpack_/polyfills.js:3639:51
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.js:3952:38
+ZoneTask/this.invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3941:52
+timer@http://localhost:9876/_karma_webpack_/polyfills.js:6024:33
+</failure>
+    <failure type="">Expected undefined to be truthy.
+&lt;Jasmine&gt;
+./src/app/game-master/game-master.component.spec.ts/&lt;/&lt;@http://localhost:9876/_karma_webpack_/main.js:672:27
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3836:30
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/ProxyZoneSpec.prototype.onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:113234:43
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+run@http://localhost:9876/_karma_webpack_/polyfills.js:3595:47
+runInTestZone@http://localhost:9876/_karma_webpack_/vendor.js:113487:38
+wrapTestInZone/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:113502:24
+&lt;Jasmine&gt;
+runInTestZone/&lt;/testZoneSpec&lt;/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:114083:51
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3836:30
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/ProxyZoneSpec.prototype.onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:113234:43
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+run@http://localhost:9876/_karma_webpack_/polyfills.js:3595:47
+runInTestZone/&lt;/testZoneSpec&lt;@http://localhost:9876/_karma_webpack_/vendor.js:114083:33
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/AsyncTestZoneSpec.prototype._finishCallbackIfDone/&lt;/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:113917:39
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.js:3871:35
+runTask@http://localhost:9876/_karma_webpack_/polyfills.js:3639:51
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.js:3952:38
+ZoneTask/this.invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3941:52
+timer@http://localhost:9876/_karma_webpack_/polyfills.js:6024:33
+</failure>
+  </testcase>
+  <testcase name="AppComponent should have as title 'ng-teddystrations-game'" time="0.015" classname="AppComponent"/>
+  <testcase name="AppComponent should render title" time="0.014" classname="AppComponent">
+    <failure type="">TypeError: compiled.querySelector(...) is null in http://localhost:9876/_karma_webpack_/main.js (line 591)
+./src/app/app.component.spec.ts/&lt;/&lt;@http://localhost:9876/_karma_webpack_/main.js:591:25
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3836:30
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/ProxyZoneSpec.prototype.onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:113234:43
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+run@http://localhost:9876/_karma_webpack_/polyfills.js:3595:47
+runInTestZone@http://localhost:9876/_karma_webpack_/vendor.js:113487:38
+wrapTestInZone/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:113502:24
+&lt;Jasmine&gt;
+runInTestZone/&lt;/testZoneSpec&lt;/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:114083:51
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3836:30
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/ProxyZoneSpec.prototype.onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:113234:43
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+run@http://localhost:9876/_karma_webpack_/polyfills.js:3595:47
+runInTestZone/&lt;/testZoneSpec&lt;@http://localhost:9876/_karma_webpack_/vendor.js:114083:33
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/AsyncTestZoneSpec.prototype._finishCallbackIfDone/&lt;/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:113917:39
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.js:3871:35
+runTask@http://localhost:9876/_karma_webpack_/polyfills.js:3639:51
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.js:3952:38
+ZoneTask/this.invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3941:52
+timer@http://localhost:9876/_karma_webpack_/polyfills.js:6024:33
+</failure>
+  </testcase>
+  <testcase name="AppComponent should create the app" time="0.011" classname="AppComponent"/>
+  <testcase name="GameStateService should be created" time="0.007" classname="GameStateService">
+    <failure type="">NullInjectorError: R3InjectorError(DynamicTestModule)[GameStateService -&gt; HttpClient -&gt; HttpClient]: 
+  NullInjectorError: No provider for HttpClient! in http://localhost:9876/_karma_webpack_/vendor.js (line 41045)
+error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'GameStateService', 'HttpClient', 'HttpClient' ] })
+get@http://localhost:9876/_karma_webpack_/vendor.js:41045:27
+get@http://localhost:9876/_karma_webpack_/vendor.js:54938:33
+get@http://localhost:9876/_karma_webpack_/vendor.js:54938:33
+injectInjectorOnly@http://localhost:9876/_karma_webpack_/vendor.js:40900:33
+ɵɵinject@http://localhost:9876/_karma_webpack_/vendor.js:40910:57
+GameStateService_Factory@ng:///GameStateService/ɵfac.js:5:44
+hydrate@http://localhost:9876/_karma_webpack_/vendor.js:55176:54
+get@http://localhost:9876/_karma_webpack_/vendor.js:54926:33
+get@http://localhost:9876/_karma_webpack_/vendor.js:72504:33
+inject@http://localhost:9876/_karma_webpack_/vendor.js:86290:52
+inject@http://localhost:9876/_karma_webpack_/vendor.js:86173:37
+./src/app/game-state.service.spec.ts/&lt;/&lt;@http://localhost:9876/_karma_webpack_/main.js:757:81
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3836:30
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/ProxyZoneSpec.prototype.onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:113234:43
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+run@http://localhost:9876/_karma_webpack_/polyfills.js:3595:47
+runInTestZone@http://localhost:9876/_karma_webpack_/vendor.js:113487:38
+wrapTestInZone/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:113502:24
+&lt;Jasmine&gt;
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.js:3871:35
+runTask@http://localhost:9876/_karma_webpack_/polyfills.js:3639:51
+drainMicroTaskQueue@http://localhost:9876/_karma_webpack_/polyfills.js:4041:39
+</failure>
+    <failure type="">Expected undefined to be truthy.
+&lt;Jasmine&gt;
+./src/app/game-state.service.spec.ts/&lt;/&lt;@http://localhost:9876/_karma_webpack_/main.js:760:25
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3836:30
+./node_modules/zone.js/dist/zone-testing.js/&lt;/&lt;/ProxyZoneSpec.prototype.onInvoke@http://localhost:9876/_karma_webpack_/vendor.js:113234:43
+invoke@http://localhost:9876/_karma_webpack_/polyfills.js:3835:36
+run@http://localhost:9876/_karma_webpack_/polyfills.js:3595:47
+runInTestZone@http://localhost:9876/_karma_webpack_/vendor.js:113487:38
+wrapTestInZone/&lt;@http://localhost:9876/_karma_webpack_/vendor.js:113502:24
+&lt;Jasmine&gt;
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.js:3871:35
+runTask@http://localhost:9876/_karma_webpack_/polyfills.js:3639:51
+drainMicroTaskQueue@http://localhost:9876/_karma_webpack_/polyfills.js:4041:39
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-logger-widget' is not a known element:
+1. If 'app-logger-widget' is an Angular component, then verify that it is part of this module.
+2. If 'app-logger-widget' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-game-master' is not a known element:
+1. If 'app-game-master' is an Angular component, then verify that it is part of this module.
+2. If 'app-game-master' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-logger-widget' is not a known element:
+1. If 'app-logger-widget' is an Angular component, then verify that it is part of this module.
+2. If 'app-logger-widget' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-game-master' is not a known element:
+1. If 'app-game-master' is an Angular component, then verify that it is part of this module.
+2. If 'app-game-master' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-logger-widget' is not a known element:
+1. If 'app-logger-widget' is an Angular component, then verify that it is part of this module.
+2. If 'app-logger-widget' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-game-master' is not a known element:
+1. If 'app-game-master' is an Angular component, then verify that it is part of this module.
+2. If 'app-game-master' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: 'Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: 'Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: 'Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: 'Can't bind to 'ngModel' since it isn't a known property of 'select'.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-logger-widget' is not a known element:
+1. If 'app-logger-widget' is an Angular component, then verify that it is part of this module.
+2. If 'app-logger-widget' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-game-master' is not a known element:
+1. If 'app-game-master' is an Angular component, then verify that it is part of this module.
+2. If 'app-game-master' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-logger-widget' is not a known element:
+1. If 'app-logger-widget' is an Angular component, then verify that it is part of this module.
+2. If 'app-logger-widget' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-game-master' is not a known element:
+1. If 'app-game-master' is an Angular component, then verify that it is part of this module.
+2. If 'app-game-master' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-logger-widget' is not a known element:
+1. If 'app-logger-widget' is an Angular component, then verify that it is part of this module.
+2. If 'app-logger-widget' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 75.0 (Ubuntu 0.0.0) WARN: ''app-game-master' is not a known element:
+1. If 'app-game-master' is an Angular component, then verify that it is part of this module.
+2. If 'app-game-master' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
