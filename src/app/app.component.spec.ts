@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ng-telestrations-game'`, () => {
+  it(`should have as title 'ng-teddystrations-game'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ng-telestrations-game');
+    expect(app.title).toEqual('ng-teddystrations-game');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ng-telestrations-game app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ng-teddystrations-game app is running!');
   });
 });
