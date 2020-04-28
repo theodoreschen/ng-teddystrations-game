@@ -49,6 +49,15 @@ export class GameService{
       );
     }
 
+  resetGame(uid: string): Observable<any> {
+    let args = {uid: uid};
+    return this.http.delete(`${gameServerUrl}/game`, {params: args})
+      .pipe(
+        tap(_ => this.log.DEBUG("GameService.resetGame", "Successfully reset game")),
+        catchError(this.handleError<any>("GameService.resetGame"))
+      );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

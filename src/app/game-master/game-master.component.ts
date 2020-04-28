@@ -3,7 +3,7 @@ import { LoggerService } from '../logger.service';
 import { GameService } from '../game.service';
 import { GameState } from '../game-server-types';
 import { interval } from 'rxjs';
-import { CookieManagerService } from '../cookie-manager.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-game-master',
@@ -21,13 +21,15 @@ export class GameMasterComponent implements OnInit, OnDestroy {
   constructor(
     private log: LoggerService,
     private game: GameService,
-    private cookie: CookieManagerService
+    private cookie: CookieService 
   ) { }
 
   ngOnInit(): void {
     this.develMode = this.log.develMode;
     this.doStatePolling = true;
     this.startPolling();
+
+    this.gameUid = this.cookie.get('teddystrations-uid');
   }
 
   ngOnDestroy(): void {
@@ -38,7 +40,6 @@ export class GameMasterComponent implements OnInit, OnDestroy {
     this.statePoller = interval(2000).subscribe(count => {
       this.game.fetchGameState().subscribe(state => {
         this.state = state;
-        this.cookie.updateGameState(this.state);
       });
       this.pollCounter = count + 1;
     });
@@ -55,9 +56,13 @@ export class GameMasterComponent implements OnInit, OnDestroy {
     this.doStatePolling = !this.doStatePolling;
   }
 
+  resetGame(): void {
+    this.game.resetGame(this.gameUid).subscribe();
+  }
+
   gameUidHandler(event): void {
     this.gameUid = event;
-    this.cookie.gameUid = this.gameUid;
+    this.cookie.set('teddystrations-uid', event, 1);
   }
 
 }

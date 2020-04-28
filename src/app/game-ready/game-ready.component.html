@@ -6,5 +6,10 @@
   <span>&nbsp;Poll attempts: {{pollCounter}}</span>
 </div>
 <div *ngIf="players">
-  <h1>Players</h1>
+  <div *ngIf="players.length > 0">
+    <h1>Teddystrators Joined</h1>
+    <ul>
+      <li *ngFor="let player of players">{{player.name}}</li>
+    </ul>
+  </div>
 </div>

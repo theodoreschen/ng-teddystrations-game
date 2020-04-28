@@ -5,6 +5,9 @@
   </button>
   <span>&nbsp;Poll attempts: {{pollCounter}}</span>
   <p *ngIf="state">Current state: {{state.state}}</p>
+  <div>
+    <button (click)="resetGame()">Reset</button>
+  </div>
 </div>
 <div *ngIf="state">
   <app-authenticate *ngIf="state.state === 'unauthenticated'" (gameUidEmitter)="gameUidHandler($event);"></app-authenticate>

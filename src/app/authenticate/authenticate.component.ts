@@ -23,8 +23,7 @@ export class AuthenticateComponent implements OnInit {
 
   onSubmit(): void {
     this.log.DEBUG("AuthenticateComponent.onSubmit", `Authenticating with UID: ${this.gameUid}`);
-    this.game.authenticateGame(this.gameUid).subscribe();
-    this.gameUidEmitter.emit(this.gameUid);
+    this.game.authenticateGame(this.gameUid).subscribe(_ => this.gameUidEmitter.emit(this.gameUid))
   }
 
 }
