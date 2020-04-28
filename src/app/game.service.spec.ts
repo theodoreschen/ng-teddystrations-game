@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { GameStateService } from './game-state.service';
+import { GameService } from './game.service';
 
 describe('GameStateService', () => {
   let httpTestingController: HttpTestingController;
-  let service: GameStateService;
+  let service: GameService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -13,7 +13,7 @@ describe('GameStateService', () => {
     });
 
     httpTestingController = TestBed.get(HttpTestingController);
-    service = TestBed.inject(GameStateService);
+    service = TestBed.inject(GameService);
   });
 
   it('should be created', () => {

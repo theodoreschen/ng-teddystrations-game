@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GameMasterComponent } from './game-master.component';
 import { LoggerService } from '../logger.service';
-import { GameStateService } from '../game-state.service';
+import { GameService } from '../game.service';
 
 describe('GameMasterComponent', () => {
   let mockLog, mockGameStateService;
@@ -17,7 +17,7 @@ describe('GameMasterComponent', () => {
       declarations: [ GameMasterComponent ],
       providers: [
         { provide: LoggerService, useValue: mockLog },
-        { provide: GameStateService, useValue: mockGameStateService }
+        { provide: GameService, useValue: mockGameStateService }
       ]
     })
     .compileComponents();

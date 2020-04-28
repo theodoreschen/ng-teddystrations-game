@@ -1,7 +1,12 @@
+<app-logger-widget></app-logger-widget>
 <div *ngIf="develMode">
   <button (click)="toggleStatePolling()">
     {{ doStatePolling? "Disable" : "Enable" }} state polling
   </button>
-  <span>Packet count: {{pollCounter}}</span>
-  <p>Current state: {{state.state}}</p>
+  <span>&nbsp;Poll attempts: {{pollCounter}}</span>
+  <p *ngIf="state">Current state: {{state.state}}</p>
+</div>
+<div *ngIf="state">
+  <app-authenticate *ngIf="state.state === 'unauthenticated'" (gameUidEmitter)="gameUidHandler($event);"></app-authenticate>
+  <app-game-ready *ngIf="state.state === 'ready'" [gameUid]="gameUid"></app-game-ready>
 </div>

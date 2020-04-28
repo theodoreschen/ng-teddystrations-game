@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LoggerService } from '../logger.service';
-import { GameStateService } from '../game-state.service';
+import { GameService } from '../game.service';
 import { GameState } from '../game-server-types';
 import { interval } from 'rxjs';
+import { CookieManagerService } from '../cookie-manager.service';
 
 @Component({
   selector: 'app-game-master',
@@ -10,15 +11,17 @@ import { interval } from 'rxjs';
   styleUrls: ['./game-master.component.css']
 })
 export class GameMasterComponent implements OnInit, OnDestroy {
+  develMode: boolean;
   statePoller: any;
   state: GameState;
-  develMode: boolean;
   doStatePolling: boolean;
   pollCounter: number;
+  gameUid: string;
 
   constructor(
     private log: LoggerService,
-    private gameState: GameStateService
+    private game: GameService,
+    private cookie: CookieManagerService
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +36,10 @@ export class GameMasterComponent implements OnInit, OnDestroy {
 
   startPolling(): void {
     this.statePoller = interval(2000).subscribe(count => {
-      this.gameState.fetchGameState().subscribe(state => this.state = state);
+      this.game.fetchGameState().subscribe(state => {
+        this.state = state;
+        this.cookie.updateGameState(this.state);
+      });
       this.pollCounter = count + 1;
     });
   }
@@ -43,12 +49,15 @@ export class GameMasterComponent implements OnInit, OnDestroy {
   }
 
   toggleStatePolling(): void {
-    if (this.doStatePolling) {
-      this.stopPolling();
-    } else {
-      this.startPolling();
-    }
+    // for debugging only
+    if (this.doStatePolling) this.stopPolling();
+    else this.startPolling();
     this.doStatePolling = !this.doStatePolling;
+  }
+
+  gameUidHandler(event): void {
+    this.gameUid = event;
+    this.cookie.gameUid = this.gameUid;
   }
 
 }

@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GameMasterComponent } from './game-master/game-master.component';
 import { LoggerWidgetComponent } from './logger-widget/logger-widget.component';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { GameReadyComponent } from './game-ready/game-ready.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameMasterComponent,
-    LoggerWidgetComponent
+    LoggerWidgetComponent,
+    AuthenticateComponent,
+    GameReadyComponent
   ],
   imports: [
     BrowserModule,

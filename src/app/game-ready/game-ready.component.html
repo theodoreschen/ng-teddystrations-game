@@ -1,0 +1,10 @@
+<h1>Awaiting Players (Game Ready)</h1>
+<div *ngIf="develMode">
+  <button (click)="togglePlayerPolling()">
+    {{ doPlayerPolling? "Disable" : "Enable"}} player polling
+  </button>
+  <span>&nbsp;Poll attempts: {{pollCounter}}</span>
+</div>
+<div *ngIf="players">
+  <h1>Players</h1>
+</div>
