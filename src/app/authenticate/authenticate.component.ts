@@ -1,7 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { LoggerService } from '../logger.service';
 import { GameService } from '../game.service';
-import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-authenticate',
@@ -9,7 +8,7 @@ import { EventEmitter } from 'protractor';
   styleUrls: ['./authenticate.component.css']
 })
 export class AuthenticateComponent implements OnInit {
-  @Output() gameUidEmitter = new EventEmitter();
+  @Output() gameUidEmitter = new EventEmitter<string>();
   gameUid: string;
   develMode: boolean;
 
