@@ -26,6 +26,7 @@ export class GameReadyComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.players = [];
     this.develMode = this.log.develMode;
+    if (this.develMode) this.gameUid = "01234567-0123-4567-89ab-0123456789ab";
     this.doPlayerPolling = true;
     this.startPolling();
   }
