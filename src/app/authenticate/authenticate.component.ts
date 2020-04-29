@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { LoggerService } from '../logger.service';
 import { GameService } from '../game.service';
 
@@ -10,7 +10,7 @@ import { GameService } from '../game.service';
 export class AuthenticateComponent implements OnInit {
   @Output() gameUidEmitter = new EventEmitter<string>();
   gameUid: string;
-  develMode: boolean;
+  @Input() develMode: boolean;
 
   constructor(
     private log: LoggerService,
@@ -18,7 +18,6 @@ export class AuthenticateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.develMode = this.log.develMode;
   }
 
   onSubmit(): void {

@@ -10,12 +10,12 @@ import { interval } from 'rxjs';
   styleUrls: ['./game-ready.component.css']
 })
 export class GameReadyComponent implements OnInit, OnDestroy {
-  develMode: boolean;
   playerPoller: any;
   doPlayerPolling: boolean;
   players: Player[];
   pollCounter: number;
 
+  @Input() develMode: boolean;
   @Input() gameUid: string;
 
   constructor(
@@ -24,8 +24,8 @@ export class GameReadyComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    this.develMode = false;
     this.players = [];
-    this.develMode = this.log.develMode;
     this.doPlayerPolling = true;
     this.startPolling();
   }

@@ -25,7 +25,7 @@ export class GameMasterComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.develMode = this.log.develMode;
+    this.develMode = false;
     this.doStatePolling = true;
     this.startPolling();
 
@@ -63,6 +63,10 @@ export class GameMasterComponent implements OnInit, OnDestroy {
   gameUidHandler(event): void {
     this.gameUid = event;
     this.cookie.set('teddystrations-uid', event, 1);
+  }
+
+  develModeHandler(event: boolean): void {
+    this.develMode = event;
   }
 
 }

@@ -1,4 +1,4 @@
-<app-logger-widget></app-logger-widget>
+<app-logger-widget (develModeEmitter)="develModeHandler($event)"></app-logger-widget>
 <div *ngIf="develMode">
   <button (click)="toggleStatePolling()">
     {{ doStatePolling? "Disable" : "Enable" }} state polling
@@ -10,6 +10,6 @@
   </div>
 </div>
 <div *ngIf="state">
-  <app-authenticate *ngIf="state.state === 'unauthenticated'" (gameUidEmitter)="gameUidHandler($event);"></app-authenticate>
-  <app-game-ready *ngIf="state.state === 'ready'" [gameUid]="gameUid"></app-game-ready>
+  <app-authenticate *ngIf="state.state === 'unauthenticated'" (gameUidEmitter)="gameUidHandler($event);" [develMode]="develMode"></app-authenticate>
+  <app-game-ready *ngIf="state.state === 'ready'" [gameUid]="gameUid" [develMode]="develMode"></app-game-ready>
 </div>
