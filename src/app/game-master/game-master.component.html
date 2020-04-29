@@ -1,4 +1,3 @@
-<app-logger-widget (develModeEmitter)="develModeHandler($event)"></app-logger-widget>
 <div *ngIf="develMode">
   <button (click)="toggleStatePolling()">
     {{ doStatePolling? "Disable" : "Enable" }} state polling

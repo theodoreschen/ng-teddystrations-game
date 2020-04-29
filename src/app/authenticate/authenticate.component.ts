@@ -18,6 +18,7 @@ export class AuthenticateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.develMode = false;
   }
 
   onSubmit(): void {

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-teddystrations-game';
+  develMode: boolean = false;
+
+  develModeHandler(event: boolean): void {
+    this.develMode = event;
+  }
 }

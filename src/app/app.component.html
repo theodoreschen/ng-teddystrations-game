@@ -1,2 +1,3 @@
 <!-- <h1>{{ title }}</h1> -->
-<app-game-master></app-game-master>
+<app-logger-widget (develModeEmitter)="develModeHandler($event)"></app-logger-widget>
+<app-game-master [develMode]="develMode"></app-game-master>
