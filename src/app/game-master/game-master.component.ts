@@ -29,7 +29,7 @@ export class GameMasterComponent implements OnInit, OnDestroy {
     this.doStatePolling = true;
     this.startPolling();
 
-    this.gameUid = this.cookie.get('teddystrations-uid');
+    this.gameUid = this.cookie.get('tedstrations-uid');
   }
 
   ngOnDestroy(): void {
@@ -62,7 +62,7 @@ export class GameMasterComponent implements OnInit, OnDestroy {
 
   gameUidHandler(event): void {
     this.gameUid = event;
-    this.cookie.set('teddystrations-uid', event, 1);
+    this.cookie.set('tedstrations-uid', event, 1);
   }
 
 }
