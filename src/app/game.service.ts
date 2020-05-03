@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { gameServerUrl } from './game-server-url';
+import { gameServerUrl } from './game-server-data';
 import { GameState, Player } from './game-server-types';
 import { LoggerService } from './logger.service';
 import { of, Observable } from 'rxjs';
@@ -55,6 +55,15 @@ export class GameService{
       .pipe(
         tap(_ => this.log.DEBUG("GameService.resetGame", "Successfully reset game")),
         catchError(this.handleError<any>("GameService.resetGame"))
+      );
+  }
+
+  startGame(uid: string, nplayers: number): Observable<any> {
+    let args = {uid: uid, nplayers: `${nplayers}`};
+    return this.http.put(`${gameServerUrl}/game/start`, '', {params: args})
+      .pipe(
+        tap(_ => this.log.DEBUG("GameService.startGame", "Successfully started game")),
+        catchError(this.handleError<any>("GameService.startGame"))
       );
   }
 

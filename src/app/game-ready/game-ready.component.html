@@ -12,4 +12,10 @@
       <li *ngFor="let player of players">{{player.name}}</li>
     </ul>
   </div>
+  <div>
+    <button type="button" [disabled]="players.length < minNumberPlayers"
+      (click)="startGame()">
+      Start
+    </button>
+  </div>
 </div>

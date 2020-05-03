@@ -3,6 +3,8 @@ import { LoggerService } from '../logger.service';
 import { GameService } from '../game.service';
 import { Player } from '../game-server-types';
 import { interval } from 'rxjs';
+import { minNumberPlayers } from '../game-server-data';
+
 
 @Component({
   selector: 'app-game-ready',
@@ -10,6 +12,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./game-ready.component.css']
 })
 export class GameReadyComponent implements OnInit, OnDestroy {
+  minNumberPlayers = minNumberPlayers;
   playerPoller: any;
   doPlayerPolling: boolean;
   players: Player[];
@@ -50,6 +53,10 @@ export class GameReadyComponent implements OnInit, OnDestroy {
     if (this.doPlayerPolling) this.stopPolling();
     else this.startPolling();
     this.doPlayerPolling = !this.doPlayerPolling;
+  }
+
+  startGame(): void {
+    this.game.startGame(this.gameUid, 1).subscribe();
   }
 
 }
