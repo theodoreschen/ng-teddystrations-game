@@ -1,1 +1,3 @@
-<p>game-play works!</p>
+<p>Current Round: {{currentRound}} of {{totalRounds}}</p>
+<p>Time remaining: {{pbMax - pbValue}}</p>
+<progress id="progress-timer" [max]="pbMax" [value]="pbValue"></progress>
