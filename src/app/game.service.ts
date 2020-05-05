@@ -71,14 +71,14 @@ export class GameService{
     let args = {uid: uid};
     return this.http.get<Timer>(`${gameServerUrl}/game/current-round/time-remaining`, {params: args})
       .pipe(
-        tap(result => this.log.DEBUG("GameService.getTimeRemaining", `${result}`)),
+        tap(result => this.log.DEBUG("GameService.getTimeRemaining", `${JSON.stringify(result)}`)),
         catchError(this.handleError<any>("GameService.getTimeRemaining"))
       );
   }
 
   nextRound(uid: string): Observable<any> {
     let args = {uid: uid};
-    return this.http.put(`${gameServerUrl}/game/end-round`, '', {params: args})
+    return this.http.put(`${gameServerUrl}/game/next-round`, '', {params: args})
       .pipe(
         tap(_ => this.log.DEBUG("GameService.nextRound", "Advancing to next round")),
         catchError(this.handleError<any>("GameService.nextRound"))

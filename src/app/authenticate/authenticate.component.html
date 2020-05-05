@@ -2,7 +2,7 @@
   <h1>Game Authentication Page</h1>
   <form (ngSubmit)="onSubmit()" #authForm="ngForm">
     <p *ngIf="develMode">01234567-0123-4567-89ab-0123456789ab</p>
-    <label for="game-uuid">Game UUID</label>
+    <label for="game-uuid">Game UUID &nbsp;</label>
     <input id="game-uuid" type="text" [(ngModel)]="gameUid" name="game-uuid"
       placeholder="01234567-0123-4567-89ab-0123456789ab" required/>
     <button type="submit" [disabled]="authForm.form.invalid">&gt;</button>

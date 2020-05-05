@@ -11,5 +11,6 @@
 <div *ngIf="state">
   <app-authenticate *ngIf="state.state === 'unauthenticated'" (gameUidEmitter)="gameUidHandler($event);" [develMode]="develMode"></app-authenticate>
   <app-game-ready *ngIf="state.state === 'ready'" [gameUid]="gameUid" [develMode]="develMode"></app-game-ready>
-  <app-game-play *ngIf="state.state === 'round_active'" [gameUid]="gameUid" [develMode]="develMode" [state]="state"></app-game-play>
+  <app-game-play *ngIf="state.state.startsWith('round')" [gameUid]="gameUid" [develMode]="develMode" [state]="state"></app-game-play>
+  <p *ngIf="state.state.startsWith('viewing')">Results Viewer</p>
 </div>

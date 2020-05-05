@@ -1,3 +1,9 @@
 <p>Current Round: {{currentRound}} of {{totalRounds}}</p>
 <p>Time remaining: {{pbMax - pbValue}}</p>
 <progress id="progress-timer" [max]="pbMax" [value]="pbValue"></progress>
+<div *ngIf="state.state === 'round_active'">
+  <button type="button" (click)="endRound();">Finish Round</button>
+</div>
+<div *ngIf="state.state === 'round_idle'">
+  <button type="button" (click)="beginNextRound();">Next Round</button>
+</div>
