@@ -1,0 +1,21 @@
+<div>
+  <section id="player-list">
+    <div class="player-button" *ngFor="let player of players" (click)="fetchContent(player.uid, 1)">
+      <p>{{player.name}}</p>
+    </div>
+  </section>
+  <div *ngIf="contentType === 'image'; else elseBlock">
+    <img [src]="content" />
+  </div>
+  <ng-template #elseBlock>
+    <div>
+      <p>{{content}}</p>
+    </div>
+  </ng-template>
+  <div>
+    <button type="button" (click)="fetchContent(activePlayerUid, nextRound)" [disabled]="content===''">Next</button>
+  </div>
+  <div>
+    <button type="button" (click)="resetGame()" disabled>Reset</button>
+  </div>
+</div>

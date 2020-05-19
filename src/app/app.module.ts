@@ -10,6 +10,7 @@ import { LoggerWidgetComponent } from './logger-widget/logger-widget.component';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { GameReadyComponent } from './game-ready/game-ready.component';
 import { GamePlayComponent } from './game-play/game-play.component';
+import { GameResultViewComponent } from './game-result-view/game-result-view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GamePlayComponent } from './game-play/game-play.component';
     LoggerWidgetComponent,
     AuthenticateComponent,
     GameReadyComponent,
-    GamePlayComponent
+    GamePlayComponent,
+    GameResultViewComponent
   ],
   imports: [
     BrowserModule,

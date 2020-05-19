@@ -1,0 +1,12 @@
+#player-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.player-button {
+  margin-right: 10px;
+}
+
+.player-button:hover {
+  cursor: pointer;
+}

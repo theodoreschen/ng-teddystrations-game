@@ -14,3 +14,9 @@ export interface Timer {
   roundDuration: number,
   timeRemaining: number
 }
+
+export interface Content {
+  round: number,
+  content: string,
+  originPlayer: string
+}
