@@ -5,5 +5,10 @@
   <button type="button" (click)="endRound();">Finish Round</button>
 </div>
 <div *ngIf="state.state === 'round_idle'">
-  <button type="button" (click)="beginNextRound();">Next Round</button>
+  <div *ngIf="currentRound !== totalRounds; else viewResultsTemplate">
+    <button type="button" (click)="beginNextRound();">Next Round</button>
+  </div>
+  <ng-template #viewResultsTemplate>
+    <button type="button" (click)="viewResults()">View Results</button>
+  </ng-template>
 </div>

@@ -1,6 +1,7 @@
 #player-list {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .player-button {
@@ -8,5 +9,7 @@
 }
 
 .player-button:hover {
+  background-color: black;
+  color: white;
   cursor: pointer;
 }

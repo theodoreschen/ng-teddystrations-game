@@ -3,6 +3,9 @@
     <div class="player-button" *ngFor="let player of players" (click)="fetchContent(player.uid, 1)">
       <p>{{player.name}}</p>
     </div>
+    <div>
+      <button type="button" (click)="fetchContent(activePlayerUid, nextRound)" [disabled]="content===''">Next</button>
+    </div>
   </section>
   <div *ngIf="contentType === 'image'; else elseBlock">
     <img [src]="content" />
@@ -12,10 +15,8 @@
       <p>{{content}}</p>
     </div>
   </ng-template>
+
   <div>
-    <button type="button" (click)="fetchContent(activePlayerUid, nextRound)" [disabled]="content===''">Next</button>
-  </div>
-  <div>
-    <button type="button" (click)="resetGame()" disabled>Reset</button>
+    <button type="button" (click)="resetGame()">Reset</button>
   </div>
 </div>
