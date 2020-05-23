@@ -26,7 +26,7 @@ export class GameService{
     // return of(<GameState>{state: "ready", message: null});
     return this.http.get<GameState>(`${gameServerUrl}/game-state`)
       .pipe(
-        // tap(result => this.log.DEBUG("GameService.fetchGameState", `Retrieved ${JSON.stringify(result)}`)),
+        tap(result => this.log.DEBUG("GameService.fetchGameState", `Retrieved ${JSON.stringify(result)}`)),
         catchError(this.handleError<any>("GameService.fetchGameState"))
       );
   }

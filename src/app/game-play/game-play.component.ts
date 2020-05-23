@@ -79,4 +79,9 @@ export class GamePlayComponent implements OnInit, OnDestroy {
     this.game.nextRound(this.gameUid).subscribe(_ => this.startTimer());
   }
 
+  viewResults(): void {
+    this.log.DEBUG("GamePlayComponent.viewResults", "");
+    this.game.nextRound(this.gameUid).subscribe();
+  }
+
 }
