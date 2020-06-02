@@ -106,6 +106,18 @@ export class GameService{
       );
   }
 
+  getListPlayersSubmitted(uid: string): Observable<Player[]> {
+    let args = {uid: uid};
+    return this.http.get<Player[]>(`${gameServerUrl}/game/players-submitted`, {params: args})
+      .pipe(
+        tap(result => this.log.DEBUG(
+          "GameService.getListPlayersSubmitted",
+          `${result.length} submissions made`
+        )),
+        catchError(this.handleError<any>("GameService.getListPlayersSubmitted"))
+      );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

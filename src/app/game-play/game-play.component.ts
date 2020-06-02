@@ -3,7 +3,7 @@ import { LoggerService } from '../logger.service';
 import { GameService } from '../game.service';
 import { interval, timer } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { GameState } from '../game-server-types';
+import { GameState, Player } from '../game-server-types';
 
 @Component({
   selector: 'app-game-play',
@@ -23,6 +23,10 @@ export class GamePlayComponent implements OnInit, OnDestroy {
   countdownTimer: any;
   endOfCountdownTimer: any;
 
+  submissionsPoller: any;
+  submissionsComplete: boolean;
+  submittedPlayers: Player[];
+
   constructor(
     private log: LoggerService,
     private game: GameService
@@ -31,12 +35,34 @@ export class GamePlayComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.pbMax = 100;
     this.pbValue = 0;
+    this.submissionsComplete = false;
 
     this.startTimer();
+    this.pollSubmissions();
   }
 
   ngOnDestroy(): void {
     this.endTimer();
+    this.endPollSubmissions();
+  }
+
+  private pollSubmissions(): void {
+    this.submissionsPoller = interval(2000)
+      .subscribe(_ => {
+        this.game.getListPlayersSubmitted(this.gameUid)
+          .subscribe(results => {
+            this.submittedPlayers = results;
+            if (this.submittedPlayers.length === this.totalRounds) {
+              this.submissionsComplete = true;
+            } else {
+              this.submissionsComplete = false;
+            }
+          });
+      });
+  }
+
+  private endPollSubmissions(): void {
+    this.submissionsPoller.unsubscribe();
   }
 
   private startTimer(): void {
