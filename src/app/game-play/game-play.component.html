@@ -1,14 +1,26 @@
-<p>Current Round: {{currentRound}} of {{totalRounds}}</p>
-<p>Time remaining: {{pbMax - pbValue}}</p>
-<progress id="progress-timer" [max]="pbMax" [value]="pbValue"></progress>
-<div *ngIf="state.state === 'round_active'">
-  <button type="button" (click)="endRound();">Finish Round</button>
-</div>
-<div *ngIf="state.state === 'round_idle'">
-  <div *ngIf="currentRound !== totalRounds; else viewResultsTemplate">
-    <button type="button" (click)="beginNextRound();">Next Round</button>
+<section id="current-round">
+  <h1>Current Round: {{currentRound}} of {{totalRounds}}</h1>
+</section>
+<section id="players-submitted">
+  <h1>Players Finished:</h1>
+  <ul>
+    <li *ngFor="let player of submittedPlayers">{{player.name}}</li>
+  </ul>
+</section>
+<section id="time-remaining">
+  <h1>Time remaining: {{pbMax - pbValue}}</h1>
+  <progress id="progress-timer" [max]="pbMax" [value]="pbValue"></progress>
+</section>
+<section>
+  <div *ngIf="state.state === 'round_active'">
+    <button type="button" (click)="endRound();" [disabled]="!submissionsComplete">Finish Round</button>
   </div>
-  <ng-template #viewResultsTemplate>
-    <button type="button" (click)="viewResults()">View Results</button>
-  </ng-template>
-</div>
+  <div *ngIf="state.state === 'round_idle'">
+    <div *ngIf="currentRound !== totalRounds; else viewResultsTemplate">
+      <button type="button" (click)="beginNextRound();" [disabled]="!submissionsComplete">Next Round</button>
+    </div>
+    <ng-template #viewResultsTemplate>
+      <button type="button" (click)="viewResults()" [disabled]="!submissionsComplete">View Results</button>
+    </ng-template>
+  </div>
+</section>
