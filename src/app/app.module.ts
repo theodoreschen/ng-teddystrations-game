@@ -11,6 +11,7 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { GameReadyComponent } from './game-ready/game-ready.component';
 import { GamePlayComponent } from './game-play/game-play.component';
 import { GameResultViewComponent } from './game-result-view/game-result-view.component';
+import { ToTimePipe } from './to-time.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GameResultViewComponent } from './game-result-view/game-result-view.com
     AuthenticateComponent,
     GameReadyComponent,
     GamePlayComponent,
-    GameResultViewComponent
+    GameResultViewComponent,
+    ToTimePipe
   ],
   imports: [
     BrowserModule,
