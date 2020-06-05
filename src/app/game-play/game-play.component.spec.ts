@@ -5,6 +5,7 @@ import { LoggerService } from '../logger.service';
 import { GameService } from '../game.service';
 import { of } from 'rxjs';
 import { Timer, GameState } from '../game-server-types';
+import { ToTimePipe } from '../to-time.pipe';
 
 describe('GamePlayComponent', () => {
   let mockLog, mockGame;
@@ -24,7 +25,7 @@ describe('GamePlayComponent', () => {
     mockGame.endRound.and.returnValue(of({}));
 
     TestBed.configureTestingModule({
-      declarations: [ GamePlayComponent ],
+      declarations: [ GamePlayComponent, ToTimePipe ],
       providers: [
         {provide: LoggerService, useValue: mockLog},
         {provide: GameService, useValue: mockGame}
